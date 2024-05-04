@@ -1,0 +1,30 @@
+{% extends "events/layout.html" %}
+
+{% block title %}
+    venue
+{% endblock title %}
+
+{% block content %}
+
+<center>
+
+<div  class="card w-50 ">
+    <div class="card-header">
+      Venue
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"> {{venue}}</h5>
+      <p class="card-text">Venue   ---- {{venue.name}}</p>
+      <p class="card-text">Zip-Code   ---- {{venue.zip_code}}</p>
+      <p class="card-text">Phone   ---- {{venue.phone}}</p>
+      <p class="card-text">Email   ---- {{venue.email_address}}</p>
+      <a href="{% url 'venues' %}" class="btn btn-primary">Go Back to Venues</a>
+    </div>
+  </div>
+
+</center>
+   
+    
+
+{% endblock content %}
+

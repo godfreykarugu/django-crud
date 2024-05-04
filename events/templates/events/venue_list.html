@@ -1,0 +1,27 @@
+{% extends "events/layout.html" %}
+
+{% block title %}
+    venue list
+{% endblock title %}
+
+{% block content %}
+
+<div class='container'>
+    <h1 class='text-center'>Venue List page</h1>
+    <table class=" table-hover table table-dark table-striped-columns">
+            {% for venue in venue_list  %}
+            <tr>
+                <td>
+            
+                    <p> <a href="{% url 'show-venue' venue_id=venue.id %}"> {{ venue}}</a></p>
+                </td>
+                <td class="text-end">
+                
+                    <a href="{% url 'update-venue' venue.id %}" class='btn btn-outline-secondary btn-sm'>Update</a>
+                </td>
+            </tr>
+            {% endfor %}
+</table>
+</div>
+
+{% endblock content %}

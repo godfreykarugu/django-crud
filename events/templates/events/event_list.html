@@ -1,0 +1,40 @@
+{% extends "events/layout.html" %}
+
+{% block title %}
+    event list
+{% endblock title %}
+
+{% block content %}
+         <div class="container">
+            <center>
+                <h1>Event List</h1>
+            </center>
+           {% for event in event_list   %}
+               <strong>Event: {{event}}</strong>
+               <ul>
+                <li>Date: {{event.date}}</li>
+                <li>Venue: {{event.Venue}}</li>
+                <li>Manager: {{event.manager}}</li>
+                <li>Description: {{event.description}}</li>
+                <li>Attendees: <br>
+                    {% for attendee in event.attendees.all  %}
+                        {{attendee}} <br>
+                    {% endfor %}
+                </li>
+               </ul>
+               <div class="card-footer">
+                <a href="{% url 'delete-event' event.id %}" class="btn btn-outline-danger btn-sm">Delete Event</a>
+               </div>
+           
+           {% endfor %}
+        </div> 
+
+
+        
+
+
+{% endblock content %}
+
+
+
+

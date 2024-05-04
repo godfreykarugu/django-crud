@@ -1,0 +1,27 @@
+{% extends "events/layout.html" %}
+
+{% block title %}Add venue{% endblock title %}Add venue
+
+{% block content %}
+
+
+        <center>
+            <h3>Add Venue to Database </h3>
+
+            {% if submitted %}
+                your venue was submitted successfully
+            
+            {% else %}
+                <form action="" method='POST'>
+                    {% csrf_token %}
+
+                    {{form.as_p}}
+
+                    <input type="submit" value="Submit" class="btn btn-secondary">
+                </form>
+
+            {% endif %}
+
+           
+        </center>
+{% endblock %}
