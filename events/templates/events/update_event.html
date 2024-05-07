@@ -1,15 +1,18 @@
 {% extends "events/layout.html" %}
+{% block title %}
+    update event
+{% endblock title %}
 
 {% block content %}
 
 
         <center>
-            <h1>Add Event</h1>
+            <h1>Update Event page</h1>
             <form action="" method='POST'>
                 {% csrf_token %}
                 {{form.as_p}}
                 <br>
-                <input type="submit" value='Add' class='btn btn-primary btn-sm'>
+                <input type="submit" value="Update">
             </form>
         </center>
 {% endblock %}
